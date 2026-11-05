@@ -1,0 +1,9 @@
+<!doctype html><html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Alerts — DriftWatch</title><meta name="description" content="Threshold-based drift alerting with severity and per-model rules.">
+<link rel="stylesheet" href="core.css"><link rel="stylesheet" href="app.css"></head><body><div id="topbar"></div>
+<main class="shell page">
+  <header class="phead"><div class="eyebrow">Alerts</div><h1>Only the <em>signal</em>.</h1><p class="lede">Drag the threshold to tune sensitivity. Alerts recompute live across every model and feature.</p></header>
+  <div class="bigstats" id="acount"></div>
+  <div class="card reveal" style="padding:22px 24px;margin-bottom:22px"><div class="ch" style="padding:0 0 15px"><h2>Alert threshold</h2><span class="k">PSI cutoff</span></div>
+    <div class="slider" style="margin-top:18px"><span>0.05</span><input type="range" id="thSlide" min="0.05" max="0.4" step="0.01"><span>0.40</span><span class="pbadge" style="margin-left:10px">PSI ≥ <b id="thVal" style="color:var(--acc)"></b></span></div></div>
+  <div id="alist"></div>
+</main><script src="three.min.js"></script><script src="app.js"></script><script src="core.js"></script></body></html>

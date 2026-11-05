@@ -1,0 +1,21 @@
+<!doctype html><html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Drift Playground — DriftWatch</title><meta name="description" content="Shift a distribution and watch PSI and KS move in real time. A hands-on feel for what drift actually is.">
+<link rel="stylesheet" href="core.css"><link rel="stylesheet" href="app.css"></head><body><div id="topbar"></div>
+<main class="shell page">
+  <header class="phead"><div class="eyebrow">Playground</div><h1>Feel the <em>drift</em>.</h1><p class="lede">Move the current distribution away from its baseline and watch the Population Stability Index and KS distance respond — the exact math running behind every monitor.</p></header>
+  <div class="grid2">
+    <div class="card reveal" style="padding:24px"><div class="ch" style="padding:0 0 15px"><h2>Baseline vs current</h2><span class="k">800 samples each</span></div>
+      <div class="histwrap" id="phist" style="margin-top:14px"></div>
+      <div class="legend"><span><i style="background:color-mix(in srgb,var(--blue) 55%,transparent)"></i>baseline N(0,1)</span><span><i style="background:var(--acc)"></i>current</span></div>
+      <div id="pverdict" class="verdict" style="margin-top:18px"></div>
+    </div>
+    <div class="col">
+      <div class="card reveal" style="padding:24px"><div class="ch" style="padding:0 0 15px"><h2>Controls</h2><span class="k">live</span></div>
+        <div class="fld"><label>Mean shift (μ) · <b id="pShiftV" style="color:var(--acc)"></b></label><div class="slider"><span>-2</span><input type="range" id="pShift" min="-2" max="3" step="0.05" value="0.6"><span>3</span></div></div>
+        <div class="fld"><label>Variance scale (σ) · <b id="pScaleV" style="color:var(--acc)"></b></label><div class="slider"><span>0.4</span><input type="range" id="pScale" min="0.4" max="2.5" step="0.05" value="1.2"><span>2.5</span></div></div>
+        <div class="fld"><label>Sample size · <b id="pNV" style="color:var(--acc)"></b></label><div class="slider"><span>100</span><input type="range" id="pN" min="100" max="800" step="50" value="800"><span>800</span></div></div>
+        <div class="seg" style="margin-top:18px"><button id="preset1">No drift</button><button id="preset2">Moderate</button><button id="preset3">Severe</button></div>
+      </div>
+      <div class="card reveal" style="padding:24px"><div class="ch" style="padding:0 0 15px"><h2>Readout</h2><span class="k">computed live</span></div><div id="pkv" style="margin-top:8px"></div></div>
+    </div>
+  </div>
+</main><script src="three.min.js"></script><script src="app.js"></script><script src="core.js"></script></body></html>

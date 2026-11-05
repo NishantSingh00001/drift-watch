@@ -1,0 +1,17 @@
+<!doctype html><html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Model — DriftWatch</title><meta name="description" content="Model detail: per-feature drift, drift history, performance decay and distribution comparison.">
+<link rel="stylesheet" href="core.css"><link rel="stylesheet" href="app.css"></head><body><div id="topbar"></div>
+<main class="shell page">
+  <header class="phead" style="padding-bottom:20px"><div class="eyebrow"><a href="monitors.html" style="color:var(--mut)">← Monitors</a></div><h1 id="mname" style="font-size:clamp(32px,5vw,58px)"></h1><p class="lede" id="mtask"></p><div id="mtag" style="margin-top:14px"></div></header>
+  <div class="bigstats" id="mstats"></div>
+  <div class="grid2 even" style="margin-bottom:22px">
+    <div class="card chartcard reveal"><div class="ch"><h2>Drift history</h2><span class="k">PSI · 30 days</span></div><div style="padding:18px 20px"><div class="chartwrap"><canvas class="chart" id="driftChart"></canvas></div><div class="legend"><span><i style="background:var(--acc)"></i>overall PSI</span><span><i style="background:var(--rose)"></i>alert threshold 0.25</span></div></div></div>
+    <div class="card chartcard reveal"><div class="ch"><h2>Performance decay</h2><span class="k">accuracy · 30 days</span></div><div style="padding:18px 20px"><div class="chartwrap"><canvas class="chart" id="perfChart"></canvas></div><div class="legend"><span><i style="background:var(--blue)"></i>accuracy</span></div></div></div>
+  </div>
+  <div class="grid2" style="margin-bottom:22px">
+    <div class="card reveal" style="padding:22px 24px"><div class="ch" style="padding:0 0 15px"><h2>Feature drift</h2><span class="k">PSI · KS per feature</span></div><div id="feats" style="margin-top:16px"></div></div>
+    <div class="col">
+      <div class="card chartcard reveal"><div class="ch"><h2>Distribution shift</h2><span class="k" id="histName"></span></div><div style="padding:16px 20px"><div class="chartwrap"><canvas class="chart" id="histTop"></canvas></div><div class="legend"><span><i style="background:var(--blue)"></i>baseline</span><span><i style="background:var(--acc)"></i>current</span></div><div class="fld"><label>Inspect feature</label><select class="inp" id="featSel"></select></div></div></div>
+      <div class="card chartcard reveal"><div class="ch"><h2>Prediction volume</h2><span class="k">per day</span></div><div style="padding:16px 20px"><div class="chartwrap"><canvas class="chart" id="volChart"></canvas></div></div></div>
+    </div>
+  </div>
+</main><script src="three.min.js"></script><script src="app.js"></script><script src="core.js"></script></body></html>
